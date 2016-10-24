@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Workflow_MigraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Workflow_MigraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="estado_evento" EntityType="Workflow_MigraModel.estado_evento" />
+    <EntitySet Name="evento" EntityType="Workflow_MigraModel.evento" />
+    <EntitySet Name="instancia_objeto_workflow" EntityType="Workflow_MigraModel.instancia_objeto_workflow" />
+    <AssociationSet Name="FK_evento_instancia_objeto_workflow" Association="Workflow_MigraModel.FK_evento_instancia_objeto_workflow">
+      <End Role="instancia_objeto_workflow" EntitySet="instancia_objeto_workflow" />
+      <End Role="evento" EntitySet="evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instancia_objeto_workflow_instancia_objeto_workflow" Association="Workflow_MigraModel.FK_instancia_objeto_workflow_instancia_objeto_workflow">
+      <End Role="instancia_objeto_workflow" EntitySet="instancia_objeto_workflow" />
+      <End Role="instancia_objeto_workflow1" EntitySet="instancia_objeto_workflow" />
+    </AssociationSet>
+    <FunctionImport Name="pa_Evento_Gestor_VerificarInstancia">
+      <Parameter Name="id_tipo_objeto" Mode="In" Type="Int32" />
+      <Parameter Name="id_objeto" Mode="In" Type="Int64" />
+      <Parameter Name="resultado" Mode="InOut" Type="Int32" />
+      <Parameter Name="id_instancia_objeto" Mode="InOut" Type="Int32" />
+      <Parameter Name="id_estado" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento" ReturnType="Collection(Workflow_MigraModel.pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento_Result)">
+      <Parameter Name="id_tipo_evento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Workflow_Gestor_CambiarEstadoObjeto" ReturnType="Collection(Workflow_MigraModel.pa_Workflow_Gestor_CambiarEstadoObjeto_Result)">
+      <Parameter Name="id_instancia_objeto" Mode="In" Type="Int32" />
+      <Parameter Name="id_estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Workflow_Gestor_Obtener_id_tipo_evento">
+      <Parameter Name="codigo_tipo_evento" Mode="In" Type="String" />
+      <Parameter Name="id_tipo_evento" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Workflow_Gestor_Obtener_id_tipo_objeto">
+      <Parameter Name="codigo_aplicacion" Mode="In" Type="String" />
+      <Parameter Name="codigo_tipo_objeto" Mode="In" Type="String" />
+      <Parameter Name="id_tipo_objeto" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Workflow_Gestor_RegistrarEvento">
+      <Parameter Name="id_instancia_objeto" Mode="In" Type="Int32" />
+      <Parameter Name="id_tipo_evento" Mode="In" Type="Int32" />
+      <Parameter Name="id_operacion" Mode="In" Type="Int64" />
+      <Parameter Name="id_estado" Mode="In" Type="Int32" />
+      <Parameter Name="fecha_evento" Mode="In" Type="DateTime" />
+      <Parameter Name="comentario_evento" Mode="In" Type="String" />
+      <Parameter Name="id_usuario" Mode="In" Type="String" />
+      <Parameter Name="codigo_grupo" Mode="In" Type="String" />
+      <Parameter Name="id_evento" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pa_Workflow_Gestor_RegistrarInstancia">
+      <Parameter Name="codigo_aplicacion" Mode="In" Type="String" />
+      <Parameter Name="codigo_tipo_objeto" Mode="In" Type="String" />
+      <Parameter Name="id_objeto" Mode="In" Type="Int64" />
+      <Parameter Name="id_objeto_padre" Mode="In" Type="Int32" />
+      <Parameter Name="id_tipo_evento" Mode="InOut" Type="Int32" />
+      <Parameter Name="id_tipo_objeto" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="estado_evento">
+    <Key>
+      <PropertyRef Name="id_estado" />
+      <PropertyRef Name="id_tipo_evento" />
+    </Key>
+    <Property Name="id_estado" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo_evento" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="evento">
+    <Key>
+      <PropertyRef Name="id_evento" />
+    </Key>
+    <Property Name="id_evento" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_estado" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo_evento" Type="Int32" Nullable="false" />
+    <Property Name="fecha_evento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="id_usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_grupo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="nivel_usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="id_operacion" Type="Int64" Nullable="false" />
+    <Property Name="comentario_evento" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="instancia_objeto_workflow" Relationship="Workflow_MigraModel.FK_evento_instancia_objeto_workflow" FromRole="evento" ToRole="instancia_objeto_workflow" />
+  </EntityType>
+  <EntityType Name="instancia_objeto_workflow">
+    <Key>
+      <PropertyRef Name="id_instancia_objeto" />
+    </Key>
+    <Property Name="id_instancia_objeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_tipo_objeto" Type="Int32" Nullable="false" />
+    <Property Name="id_estado" Type="Int32" Nullable="false" />
+    <Property Name="id_objeto" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="evento" Relationship="Workflow_MigraModel.FK_evento_instancia_objeto_workflow" FromRole="instancia_objeto_workflow" ToRole="evento" />
+    <NavigationProperty Name="instancia_objeto_workflow1" Relationship="Workflow_MigraModel.FK_instancia_objeto_workflow_instancia_objeto_workflow" FromRole="instancia_objeto_workflow" ToRole="instancia_objeto_workflow1" />
+    <NavigationProperty Name="instancia_objeto_workflow2" Relationship="Workflow_MigraModel.FK_instancia_objeto_workflow_instancia_objeto_workflow" FromRole="instancia_objeto_workflow1" ToRole="instancia_objeto_workflow" />
+  </EntityType>
+  <Association Name="FK_evento_instancia_objeto_workflow">
+    <End Type="Workflow_MigraModel.instancia_objeto_workflow" Role="instancia_objeto_workflow" Multiplicity="1" />
+    <End Type="Workflow_MigraModel.evento" Role="evento" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_instancia_objeto_workflow_instancia_objeto_workflow">
+    <End Type="Workflow_MigraModel.instancia_objeto_workflow" Role="instancia_objeto_workflow" Multiplicity="0..1" />
+    <End Type="Workflow_MigraModel.instancia_objeto_workflow" Role="instancia_objeto_workflow1" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento_Result">
+    <Property Type="Int32" Name="id_tipo_evento" Nullable="false" />
+    <Property Type="Int32" Name="id_estado" Nullable="false" />
+    <Property Type="Int32" Name="id_tipo_objeto" Nullable="false" />
+    <Property Type="String" Name="codigo_tipo_evento" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="descripcion_tipo_evento" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="nombre_corto_tipo_evento" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="operacion_tipo_evento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="url_tipo_evento" Nullable="true" MaxLength="128" />
+    <Property Type="Boolean" Name="parametro1" Nullable="true" />
+    <Property Type="String" Name="parametro2" Nullable="true" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="pa_Workflow_Gestor_CambiarEstadoObjeto_Result">
+    <Property Type="Int64" Name="id_objeto" Nullable="false" />
+    <Property Type="String" Name="codigo_estado" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="descripcion_estado" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="parametro_cambio_estado" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="codigo_aplicacion" Nullable="false" MaxLength="8" />
+  </ComplexType>
+</Schema>

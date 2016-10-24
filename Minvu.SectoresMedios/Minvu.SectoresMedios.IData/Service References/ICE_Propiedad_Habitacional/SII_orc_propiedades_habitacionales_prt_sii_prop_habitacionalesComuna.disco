@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx?wsdl" docRef="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx" xmlns:q1="http://minvu/ice/sii" binding="q1:SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComunaSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx" xmlns:q2="http://minvu/ice/sii" binding="q2:SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComunaSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

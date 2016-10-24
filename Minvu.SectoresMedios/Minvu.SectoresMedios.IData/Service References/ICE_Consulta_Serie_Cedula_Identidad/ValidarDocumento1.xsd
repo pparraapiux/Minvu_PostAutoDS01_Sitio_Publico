@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Minvu.RegistroCivil.Negocio.Cow.RegistroCivil" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Minvu.RegistroCivil.Negocio.Cow.RegistroCivil" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CodTipoDocumentoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="C" />
+      <xs:enumeration value="P" />
+      <xs:enumeration value="S" />
+      <xs:enumeration value="T" />
+      <xs:enumeration value="D" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CodTipoDocumentoType" nillable="true" type="tns:CodTipoDocumentoType" />
+</xs:schema>

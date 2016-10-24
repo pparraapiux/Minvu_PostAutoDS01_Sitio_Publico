@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d09ceddc-cc15-4887-ac7e-a1416e922cdc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.wsdl" MetadataType="Wsdl" ID="56a411c7-ea4d-425d-8387-8e7debd5365b" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx?wsdl" />
+    <MetadataFile FileName="SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.disco" MetadataType="Disco" ID="86911739-f705-4949-8e6e-fd37859a50f6" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Sii/SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

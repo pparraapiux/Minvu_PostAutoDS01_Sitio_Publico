@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rukan_migraModelStoreContainer" CdmEntityContainer="rukan_migraEntities">
+    <EntitySetMapping Name="LOG_ERROR_SITIO">
+      <EntityTypeMapping TypeName="rukan_migraModel.LOG_ERROR_SITIO">
+        <MappingFragment StoreEntitySet="LOG_ERROR_SITIO">
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="XML_ERR" ColumnName="XML_ERR" />
+          <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Mensaje_SeleccionarPorCodigo" FunctionName="rukan_migraModel.Store.Mensaje_SeleccionarPorCodigo" />
+    <FunctionImportMapping FunctionImportName="pa_Comuna_i_s" FunctionName="rukan_migraModel.Store.pa_Comuna_i_s">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.pa_Comuna_i_s_Result">
+          <ScalarProperty Name="COM_DES" ColumnName="COM_DES" />
+          <ScalarProperty Name="PRV_DES" ColumnName="PRV_DES" />
+          <ScalarProperty Name="REG_DES" ColumnName="REG_DES" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" />
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_Comuna" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_Comuna">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_usp_con_Comuna_Result">
+          <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+          <ScalarProperty Name="COM_DES" ColumnName="COM_DES" />
+          <ScalarProperty Name="PRV_ID" ColumnName="PRV_ID" />
+          <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION_Result">
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+          <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+          <ScalarProperty Name="PRV_ID" ColumnName="PRV_ID" />
+          <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+          <ScalarProperty Name="COM_TRA" ColumnName="COM_TRA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" />
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_DOMINIO" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_DOMINIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_usp_con_DOMINIO_Result">
+          <ScalarProperty Name="KEY" ColumnName="KEY" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01_Result">
+          <ScalarProperty Name="KEY" ColumnName="KEY" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION_Result">
+          <ScalarProperty Name="ID_CONDICION" ColumnName="ID_CONDICION" />
+          <ScalarProperty Name="NOM_CONDICION" ColumnName="NOM_CONDICION" />
+          <ScalarProperty Name="NUM_PARAMETRO" ColumnName="NUM_PARAMETRO" />
+          <ScalarProperty Name="ID_ERROR" ColumnName="ID_ERROR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS_Result">
+          <ScalarProperty Name="NOM_PARAMETRO" ColumnName="NOM_PARAMETRO" />
+          <ScalarProperty Name="VAL_PARAMETRO" ColumnName="VAL_PARAMETRO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Inscripcion_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Inscripcion_i_u" />
+    <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Interesado_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Interesado_i_u" />
+    <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Postulacion_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Postulacion_i_u" />
+    <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Subsidio_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Subsidio_i_u" />
+    <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Vivienda_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Vivienda_i_u" />
+  </EntityContainerMapping>
+</Mapping>

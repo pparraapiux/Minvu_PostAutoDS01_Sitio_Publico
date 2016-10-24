@@ -1,0 +1,13 @@
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.Domain.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.Domain.pdb
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.Helper.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.IData.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\NLog.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\EntityFramework.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.Helper.pdb
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\Minvu.SectoresMedios.IData.pdb
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\NLog.xml
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\bin\Debug\EntityFramework.xml
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\obj\Debug\Minvu.SectoresMedios.Domain.csprojResolveAssemblyReference.cache
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\obj\Debug\Minvu.SectoresMedios.Domain.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Domain\obj\Debug\Minvu.SectoresMedios.Domain.pdb

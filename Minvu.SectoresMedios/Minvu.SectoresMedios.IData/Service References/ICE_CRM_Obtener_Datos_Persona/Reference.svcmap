@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3587431a-fb64-41a2-ad26-290b8fa0e081" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ObtenerCiudadano.wsdl" MetadataType="Wsdl" ID="f5e7a6c9-73e4-44a3-958e-3aa5508276c3" SourceId="1" SourceUrl="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?WSDL" />
+    <MetadataFile FileName="ObtenerCiudadano.xsd" MetadataType="Schema" ID="e67c00ad-93e4-48c8-ac27-a5d385802e7f" SourceId="1" SourceUrl="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?xsd=xsd0" />
+    <MetadataFile FileName="ObtenerCiudadano1.xsd" MetadataType="Schema" ID="58d887d6-8abd-4f29-8b32-33ca92769cb9" SourceId="1" SourceUrl="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

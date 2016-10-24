@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aee6d889-77e3-420f-b73e-fe4f42808fab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.desarrollo.minvu.cl/Minvu.CajaLosAndes/Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.asmx?op=InfoAhorro" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.disco" MetadataType="Disco" ID="945c57c6-3a33-4e71-8bf3-9d058c956fde" SourceId="1" SourceUrl="http://wsminvune.desarrollo.minvu.cl/Minvu.CajaLosAndes/Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.asmx?disco" />
+    <MetadataFile FileName="Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.wsdl" MetadataType="Wsdl" ID="1b1757c7-7ebf-4a6b-b844-98c38a96c21e" SourceId="1" SourceUrl="http://wsminvune.desarrollo.minvu.cl/Minvu.CajaLosAndes/Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

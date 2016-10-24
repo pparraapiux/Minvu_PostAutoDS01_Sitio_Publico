@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16cd5760-e196-4e80-abc0-da7fc3528462" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.minvu.cl/Minvu.Coopeuch/Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.wsdl" MetadataType="Wsdl" ID="176f8985-39a2-4d3c-b3c3-5ab21b1b6248" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Coopeuch/Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.asmx?wsdl" />
+    <MetadataFile FileName="Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.disco" MetadataType="Disco" ID="07bd5a18-ce1a-476e-aeae-36bf44dd41bf" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Coopeuch/Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

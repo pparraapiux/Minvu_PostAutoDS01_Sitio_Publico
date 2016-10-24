@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarEvento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:Entrada" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Entrada">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_aplicacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_tipo_evento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_tipo_objeto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_tipo_objeto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_objeto" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_tipo_evento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_objeto_hijo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_objeto_padre" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_operacion" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="comentario_evento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha_evento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="id_usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lista_adjuntos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_grupo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarEventoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarEventoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarEventoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarEvento" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarEventoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarEventoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorkFlowGestorSoap">
+    <wsdl:operation name="RegistrarEvento">
+      <wsdl:input message="tns:RegistrarEventoSoapIn" />
+      <wsdl:output message="tns:RegistrarEventoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkFlowGestorSoap" type="tns:WorkFlowGestorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarEvento">
+      <soap:operation soapAction="http://tempuri.org/RegistrarEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WorkFlowGestorSoap12" type="tns:WorkFlowGestorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarEvento">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarEvento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkFlowGestor">
+    <wsdl:port name="WorkFlowGestorSoap" binding="tns:WorkFlowGestorSoap">
+      <soap:address location="http://wsminvuni.desarrollo.minvu.cl/WSICERukan/WorkFlowGestor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WorkFlowGestorSoap12" binding="tns:WorkFlowGestorSoap12">
+      <soap12:address location="http://wsminvuni.desarrollo.minvu.cl/WSICERukan/WorkFlowGestor.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,22 @@
+.menu-lateral{
+  display: block;
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+  width: 300px;
+  left: -260px;
+  top:10px;
+  transition-property:left;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.menu-lateral:hover{
+    left:0px;
+}
+
+.boton-lateral li a
+{
+	padding:3px 10px 3px 10px;
+	font-size:15px;
+}

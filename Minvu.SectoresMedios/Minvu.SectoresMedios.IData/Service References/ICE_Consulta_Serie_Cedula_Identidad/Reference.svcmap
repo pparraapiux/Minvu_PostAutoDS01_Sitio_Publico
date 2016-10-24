@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="169b9080-c903-4d44-a170-4da950b0cf6d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ValidarDocumento.wsdl" MetadataType="Wsdl" ID="c213caec-40f9-46e6-972c-846800aacf10" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?wsdl" />
+    <MetadataFile FileName="ValidarDocumento.disco" MetadataType="Disco" ID="cd579482-c5cf-4884-936a-f6b1d145d67b" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?disco" />
+    <MetadataFile FileName="ValidarDocumento.xsd" MetadataType="Schema" ID="cbf55761-d821-4cc2-9db8-f6e0bc6211d2" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?xsd=xsd0" />
+    <MetadataFile FileName="ValidarDocumento1.xsd" MetadataType="Schema" ID="54989dd1-b6ac-4677-905f-984d09c80a94" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?xsd=xsd3" />
+    <MetadataFile FileName="ValidarDocumento1.wsdl" MetadataType="Wsdl" ID="0fe8f00c-145e-4e96-bf0e-148117f774e1" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ValidarDocumento2.xsd" MetadataType="Schema" ID="0427d1f6-e9da-4c37-a7d0-ba9a0fd9e271" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?xsd=xsd1" />
+    <MetadataFile FileName="ValidarDocumento3.xsd" MetadataType="Schema" ID="b4c43522-f1cc-4332-b12e-e903338e1864" SourceId="1" SourceUrl="http://wsminvune.test.minvu.cl/WSICERegistroCivil/ValidarDocumento.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

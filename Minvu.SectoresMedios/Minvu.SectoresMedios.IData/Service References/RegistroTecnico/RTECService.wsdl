@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EstadoContratista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Input" type="tns:Contratista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Contratista">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rut" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EstadoContratistaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoContratistaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EstadoContratistaSoapIn">
+    <wsdl:part name="parameters" element="tns:EstadoContratista" />
+  </wsdl:message>
+  <wsdl:message name="EstadoContratistaSoapOut">
+    <wsdl:part name="parameters" element="tns:EstadoContratistaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegContratistasSoap">
+    <wsdl:operation name="EstadoContratista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estado Contratistas</wsdl:documentation>
+      <wsdl:input message="tns:EstadoContratistaSoapIn" />
+      <wsdl:output message="tns:EstadoContratistaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegContratistasSoap" type="tns:RegContratistasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstadoContratista">
+      <soap:operation soapAction="http://tempuri.org/EstadoContratista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegContratistasSoap12" type="tns:RegContratistasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstadoContratista">
+      <soap12:operation soapAction="http://tempuri.org/EstadoContratista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegContratistas">
+    <wsdl:port name="RegContratistasSoap" binding="tns:RegContratistasSoap">
+      <soap:address location="http://wsminvuni.test.minvu.cl/WSICERTEC/RTECService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RegContratistasSoap12" binding="tns:RegContratistasSoap12">
+      <soap12:address location="http://wsminvuni.test.minvu.cl/WSICERTEC/RTECService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

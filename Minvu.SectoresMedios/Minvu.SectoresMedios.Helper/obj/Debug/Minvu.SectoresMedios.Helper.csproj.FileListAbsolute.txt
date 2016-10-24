@@ -1,0 +1,10 @@
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\Minvu.SectoresMedios.Helper.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\Minvu.SectoresMedios.Helper.pdb
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\NLog.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\bin\Debug\NLog.xml
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\obj\Debug\Minvu.SectoresMedios.Helper.dll
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\obj\Debug\Minvu.SectoresMedios.Helper.pdb
+C:\Minvu\Workspace2013\Desarrollo\PostAutDS1_Apiux\Minvu.SectoresMedios.Helper\obj\Debug\Minvu.SectoresMedios.Helper.csprojResolveAssemblyReference.cache

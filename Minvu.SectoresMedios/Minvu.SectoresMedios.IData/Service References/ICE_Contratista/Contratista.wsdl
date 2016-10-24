@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://minvu.WSICE.Contratistas/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://minvu.WSICE.Contratistas/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://minvu.WSICE.Contratistas/">
+      <s:element name="ObtenerContratistaPorRut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:Entrada" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Entrada">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rut" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerContratistaPorRutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerContratistaPorRutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerContratistaPorRutSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerContratistaPorRut" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerContratistaPorRutSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerContratistaPorRutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContratistaSoap">
+    <wsdl:operation name="ObtenerContratistaPorRut">
+      <wsdl:input message="tns:ObtenerContratistaPorRutSoapIn" />
+      <wsdl:output message="tns:ObtenerContratistaPorRutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContratistaSoap" type="tns:ContratistaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerContratistaPorRut">
+      <soap:operation soapAction="http://minvu.WSICE.Contratistas/ObtenerContratistaPorRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContratistaSoap12" type="tns:ContratistaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerContratistaPorRut">
+      <soap12:operation soapAction="http://minvu.WSICE.Contratistas/ObtenerContratistaPorRut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Contratista">
+    <wsdl:port name="ContratistaSoap" binding="tns:ContratistaSoap">
+      <soap:address location="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ContratistaSoap12" binding="tns:ContratistaSoap12">
+      <soap12:address location="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+@using Minvu.SectoresMedios.Site.Utils;
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cache-control" content="max-age=-1" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>@ViewBag.Title - Ministerio de Vivienda y Urbanismo</title>
+    <link rel="icon" type="image/png" href="~/favicon.ico">
+    @Styles.Render("~/NormaGrafica/bootstrap")
+    @Styles.Render("~/NormaGrafica/css/styles")
+    @Styles.Render("~/Content/datatables/styles")
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~NormaGrafica/js/html5shiv.js"></script>
+    <script src="~NormaGrafica/js/respond.min.js"></script>
+    <script src="~NormaGrafica/js/css3-mediaqueries.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/NormaGrafica")
+    @Scripts.Render("~/Scripts/datatable")
+    @Scripts.Render("~/Scripts/datepicker")
+    @RenderSection("scripts", required: false)
+</head>
+<body class="inside cat-online">
+    <!-- Menu Navegacion -->
+    <nav class="navbar nav-minvu navbar-default header-site" role="navigation">
+        <div class="container-fluid" style="padding:0px 90px 0px 90px;">
+            <div class="navbar-header">
+                <h1 class="title">
+                    <a href="#" class="navbar-brand">POSTULACIÓN AUTOMÁTICA</a>
+                </h1>
+                <br />
+                <h2 class="cat-app-minvu cat-title default-title" style="padding-right:50px;">D.S. N° 1 de 2011</h2>
+            </div>
+
+            <!-- nav links, formularios, y otros contenidos para el toggle ( palanca)  -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1" style="padding-right:0px;">
+                <br>
+                <p class="navbar-text navbar-right">
+                    @if (Session["rut"] != null)
+                    { 
+                        @:Bienvenido: @Session["nombre"] | @Html.ActionLink("Cerrar Sesión", "CierreSesion", "Cuenta")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Iniciar Sesión", "InicioSesion", "Cuenta")
+                    }
+                </p>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- Menu Navegacion -->
+    <!-- Body -->
+    <div class="container-fluid" style="min-height: 600px; padding:20px 90px 20px 90px;">
+        @RenderBody()
+    </div>
+    <!-- Body -->
+    @*<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Presione para ir al inicio de la página" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>*@
+    <!-- footer -->
+    <footer class="footer-site" role="contentinfo">
+        <div class="container-fluid" style="padding-right:90px;padding-left:90px;">
+            <span class="separator-line"></span>
+            <div class="row">
+                <div class="col-md-8">
+                    <a title="Créditos del sistema" href="/Cuenta/Creditos" class="btn btn-default" style="width:150px;" target="_blank"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Créditos</a>
+                    <a href="http://portalsiac.minvu.cl/" title="Contacto SIAC" class="btn btn-default" style="width:150px;" target="_blank"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacto SIAC</a>
+                </div>
+                <div class="col-md-4 address-footer info-footer" style="padding-right:0px">
+                    <ul>
+                        <li class="address-f">
+                            <h2 class="minvu-name">
+                                Ministerio de Vivienda y Urbanismo
+                            </h2>
+                            <p>
+                                Alameda 924, Santiago, Chile
+                                <br>
+                                Código postal: 6513482
+                                <br>
+                                Teléfono (56-2) 2901 1000
+                                <br>
+                                Fax: 29012800 <br>
+                            </p>
+                            <strong>@LayoutInfo.ObtenerVersion()</strong>
+                        </li>
+                        <li>
+                            <a href="http://www.minvu.cl" target="_blank" title="ir al MINVU"><img src="~/NormaGrafica/images/minvu-logo-footer.jpg" alt="Logo minvu"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+    <!--Modal Cargando...-->
+    <div class="modal fade" id="modalCargando" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align:center">
+                    <p><img src="~/NormaGrafica/images/ajax-loader.gif" />&nbsp;&nbsp; Cargando datos, Por favor espere...</p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal Error -->
+    <div class="modal fade" id="ModalError" tabindex="-1" role="dialog" aria-labelledby="TituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="TituloModal">Error</h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cerrar Sesión-->
+    <div class="modal fade" id="modalCerrarSesion" tabindex="-1" role="dialog" aria-labelledby="TituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="TituloModal">Confirmación Cerrar Sesión</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>¿Está seguro que desea salir de la aplicación?</h4>
+                </div>
+                <div class="modal-footer">
+                    @Html.ActionLink("Salir", "CerrarSesion", "Cuenta", new { Area = "" }, new { id = "btnSalir", @class = "btn btn-primary" })
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

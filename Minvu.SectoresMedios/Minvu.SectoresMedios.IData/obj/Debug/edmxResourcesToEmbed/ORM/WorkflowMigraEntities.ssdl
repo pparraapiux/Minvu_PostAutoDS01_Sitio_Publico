@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Workflow_MigraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="estado_evento">
+    <Key>
+      <PropertyRef Name="id_estado" />
+      <PropertyRef Name="id_tipo_evento" />
+    </Key>
+    <Property Name="id_estado" Type="int" Nullable="false" />
+    <Property Name="id_tipo_evento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="evento">
+    <Key>
+      <PropertyRef Name="id_evento" />
+    </Key>
+    <Property Name="id_evento" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_estado" Type="int" Nullable="false" />
+    <Property Name="id_tipo_evento" Type="int" Nullable="false" />
+    <Property Name="id_instancia_objeto" Type="int" Nullable="false" />
+    <Property Name="fecha_evento" Type="datetime" Nullable="false" />
+    <Property Name="id_usuario" Type="varchar" MaxLength="16" />
+    <Property Name="codigo_grupo" Type="varchar" MaxLength="16" />
+    <Property Name="nivel_usuario" Type="varchar" MaxLength="16" />
+    <Property Name="id_operacion" Type="bigint" Nullable="false" />
+    <Property Name="comentario_evento" Type="varchar" MaxLength="128" />
+    <Property Name="fecha_registro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="instancia_objeto_workflow">
+    <Key>
+      <PropertyRef Name="id_instancia_objeto" />
+    </Key>
+    <Property Name="id_instancia_objeto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_tipo_objeto" Type="int" Nullable="false" />
+    <Property Name="ins_id_instancia_objeto" Type="int" />
+    <Property Name="id_estado" Type="int" Nullable="false" />
+    <Property Name="id_objeto" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_evento_instancia_objeto_workflow">
+    <End Role="instancia_objeto_workflow" Type="Self.instancia_objeto_workflow" Multiplicity="1" />
+    <End Role="evento" Type="Self.evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="instancia_objeto_workflow">
+        <PropertyRef Name="id_instancia_objeto" />
+      </Principal>
+      <Dependent Role="evento">
+        <PropertyRef Name="id_instancia_objeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instancia_objeto_workflow_instancia_objeto_workflow">
+    <End Role="instancia_objeto_workflow" Type="Self.instancia_objeto_workflow" Multiplicity="0..1" />
+    <End Role="instancia_objeto_workflow1" Type="Self.instancia_objeto_workflow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="instancia_objeto_workflow">
+        <PropertyRef Name="id_instancia_objeto" />
+      </Principal>
+      <Dependent Role="instancia_objeto_workflow1">
+        <PropertyRef Name="ins_id_instancia_objeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="pa_Evento_Gestor_VerificarInstancia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_objeto" Type="int" Mode="In" />
+    <Parameter Name="id_objeto" Type="bigint" Mode="In" />
+    <Parameter Name="resultado" Type="int" Mode="InOut" />
+    <Parameter Name="id_instancia_objeto" Type="int" Mode="InOut" />
+    <Parameter Name="id_estado" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_evento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pa_Workflow_Gestor_CambiarEstadoObjeto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_instancia_objeto" Type="int" Mode="In" />
+    <Parameter Name="id_estado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pa_Workflow_Gestor_Obtener_id_tipo_evento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo_tipo_evento" Type="varchar" Mode="In" />
+    <Parameter Name="id_tipo_evento" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pa_Workflow_Gestor_Obtener_id_tipo_objeto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo_aplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="codigo_tipo_objeto" Type="varchar" Mode="In" />
+    <Parameter Name="id_tipo_objeto" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pa_Workflow_Gestor_RegistrarEvento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_instancia_objeto" Type="int" Mode="In" />
+    <Parameter Name="id_tipo_evento" Type="int" Mode="In" />
+    <Parameter Name="id_operacion" Type="bigint" Mode="In" />
+    <Parameter Name="id_estado" Type="int" Mode="In" />
+    <Parameter Name="fecha_evento" Type="datetime" Mode="In" />
+    <Parameter Name="comentario_evento" Type="varchar" Mode="In" />
+    <Parameter Name="id_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="codigo_grupo" Type="varchar" Mode="In" />
+    <Parameter Name="id_evento" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pa_Workflow_Gestor_RegistrarInstancia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo_aplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="codigo_tipo_objeto" Type="varchar" Mode="In" />
+    <Parameter Name="id_objeto" Type="bigint" Mode="In" />
+    <Parameter Name="id_objeto_padre" Type="int" Mode="In" />
+    <Parameter Name="id_tipo_evento" Type="int" Mode="InOut" />
+    <Parameter Name="id_tipo_objeto" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="Workflow_MigraModelStoreContainer">
+    <EntitySet Name="estado_evento" EntityType="Self.estado_evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="evento" EntityType="Self.evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instancia_objeto_workflow" EntityType="Self.instancia_objeto_workflow" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_evento_instancia_objeto_workflow" Association="Self.FK_evento_instancia_objeto_workflow">
+      <End Role="instancia_objeto_workflow" EntitySet="instancia_objeto_workflow" />
+      <End Role="evento" EntitySet="evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instancia_objeto_workflow_instancia_objeto_workflow" Association="Self.FK_instancia_objeto_workflow_instancia_objeto_workflow">
+      <End Role="instancia_objeto_workflow" EntitySet="instancia_objeto_workflow" />
+      <End Role="instancia_objeto_workflow1" EntitySet="instancia_objeto_workflow" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

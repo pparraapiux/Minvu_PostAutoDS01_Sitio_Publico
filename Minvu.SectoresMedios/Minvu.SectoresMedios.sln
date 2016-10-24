@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minvu.SectoresMedios.IData", "Minvu.SectoresMedios.IData\Minvu.SectoresMedios.IData.csproj", "{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minvu.SectoresMedios.Domain", "Minvu.SectoresMedios.Domain\Minvu.SectoresMedios.Domain.csproj", "{92FA123A-E5B5-4F3D-8829-4204082AC843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minvu.SectoresMedios.Helper", "Minvu.SectoresMedios.Helper\Minvu.SectoresMedios.Helper.csproj", "{21C62179-7A5E-4B00-9E36-E4A1C06766E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minvu.SectoresMedios.Site", "Minvu.SectoresMedios.Site\Minvu.SectoresMedios.Site.csproj", "{AB2FA472-940A-4404-A962-7E0FFC8164C9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92FA123A-E5B5-4F3D-8829-4204082AC843} = {92FA123A-E5B5-4F3D-8829-4204082AC843}
+		{21C62179-7A5E-4B00-9E36-E4A1C06766E5} = {21C62179-7A5E-4B00-9E36-E4A1C06766E5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://erostfs:8080/tfs/negocio
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Minvu.SectoresMedios.Domain\\Minvu.SectoresMedios.Domain.csproj
+		SccProjectName1 = Minvu.SectoresMedios.Domain
+		SccLocalPath1 = Minvu.SectoresMedios.Domain
+		SccProjectUniqueName2 = Minvu.SectoresMedios.Helper\\Minvu.SectoresMedios.Helper.csproj
+		SccProjectName2 = Minvu.SectoresMedios.Helper
+		SccLocalPath2 = Minvu.SectoresMedios.Helper
+		SccProjectUniqueName3 = Minvu.SectoresMedios.IData\\Minvu.SectoresMedios.IData.csproj
+		SccProjectName3 = Minvu.SectoresMedios.IData
+		SccLocalPath3 = Minvu.SectoresMedios.IData
+		SccProjectUniqueName4 = Minvu.SectoresMedios.Site\\Minvu.SectoresMedios.Site.csproj
+		SccProjectName4 = Minvu.SectoresMedios.Site
+		SccLocalPath4 = Minvu.SectoresMedios.Site
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FA123A-E5B5-4F3D-8829-4204082AC843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FA123A-E5B5-4F3D-8829-4204082AC843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FA123A-E5B5-4F3D-8829-4204082AC843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FA123A-E5B5-4F3D-8829-4204082AC843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C62179-7A5E-4B00-9E36-E4A1C06766E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C62179-7A5E-4B00-9E36-E4A1C06766E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C62179-7A5E-4B00-9E36-E4A1C06766E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C62179-7A5E-4B00-9E36-E4A1C06766E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2FA472-940A-4404-A962-7E0FFC8164C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2FA472-940A-4404-A962-7E0FFC8164C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2FA472-940A-4404-A962-7E0FFC8164C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2FA472-940A-4404-A962-7E0FFC8164C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

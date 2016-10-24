@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Workflow_MigraModelStoreContainer" CdmEntityContainer="Workflow_MigraEntities">
+    <EntitySetMapping Name="estado_evento">
+      <EntityTypeMapping TypeName="Workflow_MigraModel.estado_evento">
+        <MappingFragment StoreEntitySet="estado_evento">
+          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="evento">
+      <EntityTypeMapping TypeName="Workflow_MigraModel.evento">
+        <MappingFragment StoreEntitySet="evento">
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="comentario_evento" ColumnName="comentario_evento" />
+          <ScalarProperty Name="id_operacion" ColumnName="id_operacion" />
+          <ScalarProperty Name="nivel_usuario" ColumnName="nivel_usuario" />
+          <ScalarProperty Name="codigo_grupo" ColumnName="codigo_grupo" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fecha_evento" ColumnName="fecha_evento" />
+          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="id_evento" ColumnName="id_evento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instancia_objeto_workflow">
+      <EntityTypeMapping TypeName="Workflow_MigraModel.instancia_objeto_workflow">
+        <MappingFragment StoreEntitySet="instancia_objeto_workflow">
+          <ScalarProperty Name="id_objeto" ColumnName="id_objeto" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="id_tipo_objeto" ColumnName="id_tipo_objeto" />
+          <ScalarProperty Name="id_instancia_objeto" ColumnName="id_instancia_objeto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_evento_instancia_objeto_workflow" TypeName="Workflow_MigraModel.FK_evento_instancia_objeto_workflow" StoreEntitySet="evento">
+      <EndProperty Name="evento">
+        <ScalarProperty Name="id_evento" ColumnName="id_evento" />
+      </EndProperty>
+      <EndProperty Name="instancia_objeto_workflow">
+        <ScalarProperty Name="id_instancia_objeto" ColumnName="id_instancia_objeto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_instancia_objeto_workflow_instancia_objeto_workflow" TypeName="Workflow_MigraModel.FK_instancia_objeto_workflow_instancia_objeto_workflow" StoreEntitySet="instancia_objeto_workflow">
+      <EndProperty Name="instancia_objeto_workflow1">
+        <ScalarProperty Name="id_instancia_objeto" ColumnName="id_instancia_objeto" />
+      </EndProperty>
+      <EndProperty Name="instancia_objeto_workflow">
+        <ScalarProperty Name="id_instancia_objeto" ColumnName="ins_id_instancia_objeto" />
+      </EndProperty>
+      <Condition ColumnName="ins_id_instancia_objeto" IsNull="false" />
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="pa_Evento_Gestor_VerificarInstancia" FunctionName="Workflow_MigraModel.Store.pa_Evento_Gestor_VerificarInstancia" />
+    <FunctionImportMapping FunctionImportName="pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento" FunctionName="Workflow_MigraModel.Store.pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Workflow_MigraModel.pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento_Result">
+          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="id_tipo_objeto" ColumnName="id_tipo_objeto" />
+          <ScalarProperty Name="codigo_tipo_evento" ColumnName="codigo_tipo_evento" />
+          <ScalarProperty Name="descripcion_tipo_evento" ColumnName="descripcion_tipo_evento" />
+          <ScalarProperty Name="nombre_corto_tipo_evento" ColumnName="nombre_corto_tipo_evento" />
+          <ScalarProperty Name="operacion_tipo_evento" ColumnName="operacion_tipo_evento" />
+          <ScalarProperty Name="url_tipo_evento" ColumnName="url_tipo_evento" />
+          <ScalarProperty Name="parametro1" ColumnName="parametro1" />
+          <ScalarProperty Name="parametro2" ColumnName="parametro2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pa_Workflow_Gestor_CambiarEstadoObjeto" FunctionName="Workflow_MigraModel.Store.pa_Workflow_Gestor_CambiarEstadoObjeto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Workflow_MigraModel.pa_Workflow_Gestor_CambiarEstadoObjeto_Result">
+          <ScalarProperty Name="id_objeto" ColumnName="id_objeto" />
+          <ScalarProperty Name="codigo_estado" ColumnName="codigo_estado" />
+          <ScalarProperty Name="descripcion_estado" ColumnName="descripcion_estado" />
+          <ScalarProperty Name="parametro_cambio_estado" ColumnName="parametro_cambio_estado" />
+          <ScalarProperty Name="codigo_aplicacion" ColumnName="codigo_aplicacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pa_Workflow_Gestor_Obtener_id_tipo_evento" FunctionName="Workflow_MigraModel.Store.pa_Workflow_Gestor_Obtener_id_tipo_evento" />
+    <FunctionImportMapping FunctionImportName="pa_Workflow_Gestor_Obtener_id_tipo_objeto" FunctionName="Workflow_MigraModel.Store.pa_Workflow_Gestor_Obtener_id_tipo_objeto" />
+    <FunctionImportMapping FunctionImportName="pa_Workflow_Gestor_RegistrarEvento" FunctionName="Workflow_MigraModel.Store.pa_Workflow_Gestor_RegistrarEvento" />
+    <FunctionImportMapping FunctionImportName="pa_Workflow_Gestor_RegistrarInstancia" FunctionName="Workflow_MigraModel.Store.pa_Workflow_Gestor_RegistrarInstancia" />
+  </EntityContainerMapping>
+</Mapping>

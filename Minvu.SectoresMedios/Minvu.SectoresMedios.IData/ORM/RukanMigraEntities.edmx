@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="rukan_migraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LOG_ERROR_SITIO">
+          <Key>
+            <PropertyRef Name="LOG_ID" />
+          </Key>
+          <Property Name="LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="XML_ERR" Type="varchar" MaxLength="4000" />
+          <Property Name="FECHA" Type="datetime" />
+        </EntityType>
+        <Function Name="Mensaje_SeleccionarPorCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Cambiar_Estado_Inscripcion_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idobjeto" Type="int" Mode="In" />
+          <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Cambiar_Estado_Interesado_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idobjeto" Type="int" Mode="In" />
+          <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Cambiar_Estado_Postulacion_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idobjeto" Type="int" Mode="In" />
+          <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Cambiar_Estado_Subsidio_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idobjeto" Type="int" Mode="In" />
+          <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Cambiar_Estado_Vivienda_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idobjeto" Type="int" Mode="In" />
+          <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="pa_Comuna_i_s" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_comuna" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="comuna" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_usp_con_Comuna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_region" Type="int" Mode="In" />
+          <Parameter Name="id_provincia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="COMUNA" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="COM_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_usp_con_DOMINIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DOM_ID_DOM" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LIN_PRO" Type="int" Mode="In" />
+          <Parameter Name="LLA_ID" Type="int" Mode="In" />
+          <Parameter Name="OFE_ID" Type="int" Mode="In" />
+          <Parameter Name="DCB_APL_TIP" Type="int" Mode="In" />
+          <Parameter Name="DCB_CBR_TIP" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="rukan_migraModelStoreContainer">
+          <EntitySet Name="LOG_ERROR_SITIO" EntityType="Self.LOG_ERROR_SITIO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rukan_migraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="rukan_migraEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="LOG_ERROR_SITIO" EntityType="rukan_migraModel.LOG_ERROR_SITIO" />
+          <FunctionImport Name="Mensaje_SeleccionarPorCodigo" ReturnType="Collection(String)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Comuna_i_s" ReturnType="Collection(rukan_migraModel.pa_Comuna_i_s_Result)">
+          <Parameter Name="id_comuna" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" ReturnType="Collection(Int32)">
+          <Parameter Name="comuna" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_usp_con_Comuna" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_usp_con_Comuna_Result)">
+            <Parameter Name="id_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_provincia" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION_Result)">
+          <Parameter Name="COMUNA" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" ReturnType="Collection(Int32)">
+          <Parameter Name="COM_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_usp_con_DOMINIO" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_usp_con_DOMINIO_Result)">
+          <Parameter Name="DOM_ID_DOM" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01_Result)" />
+          <FunctionImport Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION_Result)">
+            <Parameter Name="LIN_PRO" Mode="In" Type="Int32" />
+            <Parameter Name="LLA_ID" Mode="In" Type="Int32" />
+            <Parameter Name="OFE_ID" Mode="In" Type="Int32" />
+            <Parameter Name="DCB_APL_TIP" Mode="In" Type="Int32" />
+            <Parameter Name="DCB_CBR_TIP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS" ReturnType="Collection(rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Cambiar_Estado_Inscripcion_i_u">
+            <Parameter Name="idobjeto" Mode="In" Type="Int32" />
+            <Parameter Name="codigoestado" Mode="In" Type="String" />
+            <Parameter Name="descripcionestado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Cambiar_Estado_Interesado_i_u">
+            <Parameter Name="idobjeto" Mode="In" Type="Int32" />
+            <Parameter Name="codigoestado" Mode="In" Type="String" />
+            <Parameter Name="descripcionestado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Cambiar_Estado_Postulacion_i_u">
+            <Parameter Name="idobjeto" Mode="In" Type="Int32" />
+            <Parameter Name="codigoestado" Mode="In" Type="String" />
+            <Parameter Name="descripcionestado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Cambiar_Estado_Subsidio_i_u">
+            <Parameter Name="idobjeto" Mode="In" Type="Int32" />
+            <Parameter Name="codigoestado" Mode="In" Type="String" />
+            <Parameter Name="descripcionestado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_Cambiar_Estado_Vivienda_i_u">
+            <Parameter Name="idobjeto" Mode="In" Type="Int32" />
+            <Parameter Name="codigoestado" Mode="In" Type="String" />
+            <Parameter Name="descripcionestado" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="LOG_ERROR_SITIO">
+          <Key>
+            <PropertyRef Name="LOG_ID" />
+          </Key>
+          <Property Name="LOG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="XML_ERR" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="pa_Comuna_i_s_Result">
+          <Property Type="String" Name="COM_DES" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="PRV_DES" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="REG_DES" Nullable="true" MaxLength="64" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_usp_con_Comuna_Result">
+          <Property Type="Int32" Name="COM_ID" Nullable="false" />
+          <Property Type="String" Name="COM_DES" Nullable="true" MaxLength="64" />
+          <Property Type="Int32" Name="PRV_ID" Nullable="false" />
+          <Property Type="Int32" Name="REG_ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION_Result">
+          <Property Type="String" Name="REGION" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="PROVINCIA" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="COMUNA" Nullable="true" MaxLength="64" />
+          <Property Type="Int32" Name="REG_ID" Nullable="false" />
+          <Property Type="Int32" Name="PRV_ID" Nullable="false" />
+          <Property Type="Int32" Name="COM_ID" Nullable="false" />
+          <Property Type="Int32" Name="COM_TRA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_usp_con_DOMINIO_Result">
+          <Property Type="String" Name="KEY" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="VALUE" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01_Result">
+          <Property Type="Int32" Name="KEY" Nullable="false" />
+          <Property Type="String" Name="VALUE" Nullable="true" MaxLength="64" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION_Result">
+          <Property Type="Int32" Name="ID_CONDICION" Nullable="false" />
+          <Property Type="String" Name="NOM_CONDICION" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NUM_PARAMETRO" Nullable="true" />
+          <Property Type="Int32" Name="ID_ERROR" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS_Result">
+          <Property Type="String" Name="NOM_PARAMETRO" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VAL_PARAMETRO" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rukan_migraModelStoreContainer" CdmEntityContainer="rukan_migraEntities" >
+          <EntitySetMapping Name="LOG_ERROR_SITIO">
+            <EntityTypeMapping TypeName="rukan_migraModel.LOG_ERROR_SITIO">
+              <MappingFragment StoreEntitySet="LOG_ERROR_SITIO">
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="XML_ERR" ColumnName="XML_ERR" />
+                <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Mensaje_SeleccionarPorCodigo" FunctionName="rukan_migraModel.Store.Mensaje_SeleccionarPorCodigo" />
+          <FunctionImportMapping FunctionImportName="pa_Comuna_i_s" FunctionName="rukan_migraModel.Store.pa_Comuna_i_s">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.pa_Comuna_i_s_Result">
+                <ScalarProperty Name="COM_DES" ColumnName="COM_DES" />
+                <ScalarProperty Name="PRV_DES" ColumnName="PRV_DES" />
+                <ScalarProperty Name="REG_DES" ColumnName="REG_DES" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" />
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_Comuna" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_Comuna">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_usp_con_Comuna_Result">
+                <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+                <ScalarProperty Name="COM_DES" ColumnName="COM_DES" />
+                <ScalarProperty Name="PRV_ID" ColumnName="PRV_ID" />
+                <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION_Result">
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+                <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+                <ScalarProperty Name="PRV_ID" ColumnName="PRV_ID" />
+                <ScalarProperty Name="COM_ID" ColumnName="COM_ID" />
+                <ScalarProperty Name="COM_TRA" ColumnName="COM_TRA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" />
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_usp_con_DOMINIO" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_usp_con_DOMINIO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_usp_con_DOMINIO_Result">
+                <ScalarProperty Name="KEY" ColumnName="KEY" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01_Result">
+                <ScalarProperty Name="KEY" ColumnName="KEY" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION_Result">
+                <ScalarProperty Name="ID_CONDICION" ColumnName="ID_CONDICION" />
+                <ScalarProperty Name="NOM_CONDICION" ColumnName="NOM_CONDICION" />
+                <ScalarProperty Name="NUM_PARAMETRO" ColumnName="NUM_PARAMETRO" />
+                <ScalarProperty Name="ID_ERROR" ColumnName="ID_ERROR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS" FunctionName="rukan_migraModel.Store.RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="rukan_migraModel.RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS_Result">
+                <ScalarProperty Name="NOM_PARAMETRO" ColumnName="NOM_PARAMETRO" />
+                <ScalarProperty Name="VAL_PARAMETRO" ColumnName="VAL_PARAMETRO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Inscripcion_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Inscripcion_i_u" />
+          <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Interesado_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Interesado_i_u" />
+          <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Postulacion_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Postulacion_i_u" />
+          <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Subsidio_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Subsidio_i_u" />
+          <FunctionImportMapping FunctionImportName="pa_Cambiar_Estado_Vivienda_i_u" FunctionName="rukan_migraModel.Store.pa_Cambiar_Estado_Vivienda_i_u" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

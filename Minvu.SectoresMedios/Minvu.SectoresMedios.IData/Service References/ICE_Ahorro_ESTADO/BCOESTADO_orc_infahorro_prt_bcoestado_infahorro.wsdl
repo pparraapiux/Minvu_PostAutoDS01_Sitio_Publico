@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://minvu.cl/ICE/BancoEstado" xmlns:s1="http://infAhorro.Schema_infahorro_conice" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://infAhorro.Schema_infahorro_rice" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://minvu.cl/ICE/BancoEstado" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BizTalk assembly "Minvu.BancoEstado.Process, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fefa50e9d37f6a1" published web service.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://minvu.cl/ICE/BancoEstado">
+      <s:import namespace="http://infAhorro.Schema_infahorro_conice" />
+      <s:import namespace="http://infAhorro.Schema_infahorro_rice" />
+      <s:element name="ope_prt_bcoestado_infahorro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:Infahorro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ope_prt_bcoestado_infahorroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:ICE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://infAhorro.Schema_infahorro_conice">
+      <s:element name="Infahorro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Rut" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Dv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Cuenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Periodo" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Ussist" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Mes" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Ano" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Nllamado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Programahabitacional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://infAhorro.Schema_infahorro_rice">
+      <s:element name="ICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="RESULTADO">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ESTADO" type="s:int" />
+                  <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="CODIGO" type="s:long" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DESCRIPCION" type="s:string" />
+                  <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ID_RESPUESTA" type="s:long" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Resp_Minvu">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Cabecera">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Id_msg" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Id_servicio" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="IP" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="URL" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Fecha" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Hora" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Resultado" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Glosa_err" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Entrada">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Num_cta" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Rut" type="s:long" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Dv_rut" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Mes" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Usuario" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Sol_Correl" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Salida">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Status_cta" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Fecha_apertura" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Reajuste" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Giros_posteriores" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Plazo_orig_meses" type="s:int" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Monto_orig_UF" type="s:long" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Plazo_modificado" type="s:long" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Monto_modificado_UF" type="s:long" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Saldo_UF_mes" type="s:long" />
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Saldo_UF_dia" type="s:long" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Fecha_inicio" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="Sa">
+                          <s:complexType>
+                            <s:simpleContent>
+                              <s:extension base="s:long">
+                                <s:attribute name="S" type="s:string" />
+                              </s:extension>
+                            </s:simpleContent>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ope_prt_bcoestado_infahorroSoapIn">
+    <wsdl:part name="parameters" element="tns:ope_prt_bcoestado_infahorro" />
+  </wsdl:message>
+  <wsdl:message name="ope_prt_bcoestado_infahorroSoapOut">
+    <wsdl:part name="parameters" element="tns:ope_prt_bcoestado_infahorroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap">
+    <wsdl:operation name="ope_prt_bcoestado_infahorro">
+      <wsdl:input message="tns:ope_prt_bcoestado_infahorroSoapIn" />
+      <wsdl:output message="tns:ope_prt_bcoestado_infahorroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap" type="tns:BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ope_prt_bcoestado_infahorro">
+      <soap:operation soapAction="http://minvu.cl/ICE/BancoEstado/BCOESTADO_orc_infahorro_prt_bcoestado_infahorro/ope_prt_bcoestado_infahorro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap12" type="tns:BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ope_prt_bcoestado_infahorro">
+      <soap12:operation soapAction="http://minvu.cl/ICE/BancoEstado/BCOESTADO_orc_infahorro_prt_bcoestado_infahorro/ope_prt_bcoestado_infahorro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorro">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BizTalk assembly "Minvu.BancoEstado.Process, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fefa50e9d37f6a1" published web service.</wsdl:documentation>
+    <wsdl:port name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap" binding="tns:BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap">
+      <soap:address location="http://wsminvune.minvu.cl/Minvu.BancoEstado/BCOESTADO_orc_infahorro_prt_bcoestado_infahorro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap12" binding="tns:BCOESTADO_orc_infahorro_prt_bcoestado_infahorroSoap12">
+      <soap12:address location="http://wsminvune.minvu.cl/Minvu.BancoEstado/BCOESTADO_orc_infahorro_prt_bcoestado_infahorro.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

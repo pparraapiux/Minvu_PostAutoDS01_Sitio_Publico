@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c4f7efa1-2191-4e3e-b982-eaa512a458bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BDD_orc_bloqueo_Prt_bdd_bloqueo.disco" MetadataType="Disco" ID="0c9ac513-19a1-446f-be46-175a79371a30" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx?disco" />
+    <MetadataFile FileName="BDD_orc_bloqueo_Prt_bdd_bloqueo.wsdl" MetadataType="Wsdl" ID="5c68fea6-32a3-4e5a-b68f-52b670df36d6" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

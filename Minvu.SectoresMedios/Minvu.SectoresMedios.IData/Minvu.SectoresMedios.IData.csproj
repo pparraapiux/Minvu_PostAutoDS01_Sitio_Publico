@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6A317D1-4894-4BBB-A9E5-52FAC79C8A48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minvu.SectoresMedios.IData</RootNamespace>
+    <AssemblyName>Minvu.SectoresMedios.IData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=3.2.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\Common\CommonDAO.cs" />
+    <Compile Include="DAO\DominioDAO.cs" />
+    <Compile Include="DAO\Managers\MessageManagerDAO.cs" />
+    <Compile Include="DAO\MotorCondicion\MotorCondicionDAO.cs" />
+    <Compile Include="DAO\WorkflowMigra\EventoDAO.cs" />
+    <Compile Include="DAO\WorkflowMigra\InstanciaObjetoWorkflowDAO.cs" />
+    <Compile Include="DAO\ErrorDAO.cs" />
+    <Compile Include="DAO\ComunaDAO.cs" />
+    <Compile Include="DAO\RegionDAO.cs" />
+    <Compile Include="DAO\WorkflowMigra\WorkflowGestorDAO.cs" />
+    <Compile Include="ORM\estado_evento.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\evento.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\instancia_objeto_workflow.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\LOG_ERROR_SITIO.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\pa_Comuna_i_s_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\pa_Malla_Estados_Eventos_Gestor_ObtenerDetalleTipoEvento_Result.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\pa_Workflow_Gestor_CambiarEstadoObjeto_Result.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RukanMigraEntities.Context.cs">
+      <DependentUpon>RukanMigraEntities.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ORM\RukanMigraEntities.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ORM\RukanMigraEntities.Designer.cs">
+      <DependentUpon>RukanMigraEntities.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_usp_con_Comuna_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_usp_con_DOMINIO_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS_Result.cs">
+      <DependentUpon>RukanMigraEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\WorkflowMigraEntities.Context.cs">
+      <DependentUpon>WorkflowMigraEntities.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ORM\WorkflowMigraEntities.cs">
+      <DependentUpon>WorkflowMigraEntities.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ORM\WorkflowMigraEntities.Designer.cs">
+      <DependentUpon>WorkflowMigraEntities.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_CajaLosAndes\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_COOPEUCH\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_ESTADO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_SCOTIABANK\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_CRM_Obtener_Datos_Persona\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Mideplan\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_RegistroCivil\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PSSIM_DatosFuncionario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RegistroTecnico\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_WorkFlowGestor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSICEMideplan_FPS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSSII_Rol\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Propiedad_Habitacional\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ICE_Contratista\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BancoEstado.cs" />
+    <Compile Include="Services\CajaLosAndes.cs" />
+    <Compile Include="Services\Contratista.cs" />
+    <Compile Include="Services\Coopeuch.cs" />
+    <Compile Include="Services\Workflow.cs" />
+    <Compile Include="Services\Mideplan.cs" />
+    <Compile Include="Services\RegistroCivil.cs" />
+    <Compile Include="Services\Crm.cs" />
+    <Compile Include="Services\Scotiabank.cs" />
+    <Compile Include="Services\SII.cs" />
+    <Compile Include="Services\WsPssimDatosFuncionario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ORM\RukanMigraEntities.Context.tt">
+      <DependentUpon>RukanMigraEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RukanMigraEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ORM\RukanMigraEntities.edmx.diagram">
+      <DependentUpon>RukanMigraEntities.edmx</DependentUpon>
+    </None>
+    <None Include="ORM\RukanMigraEntities.tt">
+      <DependentUpon>RukanMigraEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RukanMigraEntities.cs</LastGenOutput>
+    </None>
+    <None Include="ORM\WorkflowMigraEntities.Context.tt">
+      <DependentUpon>WorkflowMigraEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WorkflowMigraEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ORM\WorkflowMigraEntities.edmx.diagram">
+      <DependentUpon>WorkflowMigraEntities.edmx</DependentUpon>
+    </None>
+    <None Include="ORM\WorkflowMigraEntities.tt">
+      <DependentUpon>WorkflowMigraEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WorkflowMigraEntities.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Minvu.SectoresMedios.IData.ICE_AhorroCajaLosAndes_Bloqueo.Bloqueo_CuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Minvu.SectoresMedios.IData.ICE_AhorroCajaLosAndes_Bloqueo.ICE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Minvu_CajaLosAndes_orcCajaLosAndesBloqueo_prt_CajaLosAndes_Bloqueo.wsdl" />
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\Minvu.SectoresMedios.IData.ICE_Ahorro_CajaLosAndes.ICE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\Minvu.SectoresMedios.IData.ICE_Ahorro_CajaLosAndes.InfoAhorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\Minvu.SectoresMedios.IData.ICE_Ahorro_COOPEUCH.ICE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\Minvu.SectoresMedios.IData.ICE_Ahorro_COOPEUCH.infoAhorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\Minvu_Coopeuch_orc_minvu_coopeuch_saldo_prt_coopeuch_infoAhorro.disco" />
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\Minvu_Coopeuch_orc_minvu_coopeuch_saldo_prt_coopeuch_infoAhorro.wsdl" />
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_COOPEUCH_Bloqueo.BloqueoSaldoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_COOPEUCH_Bloqueo.ICE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.wsdl" />
+    <None Include="Service References\ICE_Ahorro_ESTADO\BCOESTADO_orc_infahorro_prt_bcoestado_infahorro.wsdl" />
+    <None Include="Service References\ICE_Ahorro_ESTADO\Minvu.SectoresMedios.IData.ICE_Ahorro_ESTADO.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_ESTADO\Minvu.SectoresMedios.IData.ICE_Ahorro_ESTADO.ope_prt_bcoestado_infahorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\BCOESTADO_orc_bloqueo_prt_bcoestado_bloqueo.wsdl" />
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_ESTADO_Bloqueo.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_ESTADO_Bloqueo.ope_prt_bcoestado_bloqueoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\BDD_orc_infahorro_prt_bdd_infahorro.wsdl" />
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\Minvu.SectoresMedios.IData.ICE_Ahorro_SCOTIABANK.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\Minvu.SectoresMedios.IData.ICE_Ahorro_SCOTIABANK.ope_prt_bdd_infahorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\BDD_orc_bloqueo_Prt_bdd_bloqueo.wsdl" />
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_SCOTIABANK_Bloqueo.Ope_prt_bdd_bloqueoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\Minvu.SectoresMedios.IData.ICE_Ahorro_SCOTIABANK_Bloqueo.Ope_prt_bdd_bloqueoResponsePart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\Minvu.SectoresMedios.IData.ICE_Consulta_Serie_Cedula_Identidad.SalidaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento.wsdl" />
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento1.wsdl" />
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_Contratista\Minvu.SectoresMedios.IData.ICE_Contratista.ObtenerContratistaPorRutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\Minvu.SectoresMedios.IData.ICE_CRM_Obtener_Datos_Persona.SalidaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\ObtenerCiudadano.wsdl" />
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\ObtenerCiudadano.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\ObtenerCiudadano1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ICE_Mideplan\fps.wsdl" />
+    <None Include="Service References\ICE_Mideplan\Minvu.SectoresMedios.IData.ICE_Mideplan.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Propiedad_Habitacional\Minvu.SectoresMedios.IData.ICE_Propiedad_Habitacional.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_Propiedad_Habitacional\Minvu.SectoresMedios.IData.ICE_Propiedad_Habitacional.Propiedades_HabitacionalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_RegistroCivil\Minvu.SectoresMedios.IData.ICE_RegistroCivil.ope_prt_regcivil_info_personaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ICE_RegistroCivil\REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.wsdl" />
+    <None Include="Service References\ICE_WorkFlowGestor\Minvu.SectoresMedios.IData.ICE_WorkFlowGestor.RegistrarEventoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSSIM_DatosFuncionario\funcionario.wsdl" />
+    <None Include="Service References\PSSIM_DatosFuncionario\Minvu.SectoresMedios.IData.PSSIM_DatosFuncionario.ObtenerDatosFuncionarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistroTecnico\Minvu.SectoresMedios.IData.RegistroTecnico.EstadoContratistaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegistroTecnico\RTECService.wsdl" />
+    <None Include="Service References\ICE_WorkFlowGestor\WorkFlowGestor.wsdl" />
+    <None Include="Service References\WSICEMideplan_FPS\fps.wsdl" />
+    <None Include="Service References\WSICEMideplan_FPS\Minvu.SectoresMedios.IData.WSICEMideplan_FPS.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSSII_Rol\Minvu.SectoresMedios.IData.WSSII_Rol.ICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSSII_Rol\Minvu.SectoresMedios.IData.WSSII_Rol.prt_Inf_rolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSSII_Rol\SII_orc_inf_rol_prt_Datos_Rol.wsdl" />
+    <None Include="Service References\ICE_Propiedad_Habitacional\SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.wsdl" />
+    <None Include="Service References\ICE_Contratista\Contratista.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_CajaLosAndes\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_COOPEUCH\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_ESTADO\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_SCOTIABANK\" />
+    <WCFMetadataStorage Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\" />
+    <WCFMetadataStorage Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\" />
+    <WCFMetadataStorage Include="Service References\ICE_CRM_Obtener_Datos_Persona\" />
+    <WCFMetadataStorage Include="Service References\ICE_Mideplan\" />
+    <WCFMetadataStorage Include="Service References\ICE_RegistroCivil\" />
+    <WCFMetadataStorage Include="Service References\PSSIM_DatosFuncionario\" />
+    <WCFMetadataStorage Include="Service References\RegistroTecnico\" />
+    <WCFMetadataStorage Include="Service References\ICE_WorkFlowGestor\" />
+    <WCFMetadataStorage Include="Service References\WSICEMideplan_FPS\" />
+    <WCFMetadataStorage Include="Service References\WSSII_Rol\" />
+    <WCFMetadataStorage Include="Service References\ICE_Propiedad_Habitacional\" />
+    <WCFMetadataStorage Include="Service References\ICE_Contratista\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\Minvu_CajaLosAndes_orcCajaLosAndesSaldo_prt_CajaLosAndes_Saldo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_CajaLosAndes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO\BCOESTADO_orc_infahorro_prt_bcoestado_infahorro.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\BDD_orc_infahorro_prt_bdd_infahorro.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Mideplan\fps.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Mideplan\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Mideplan\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Mideplan\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_RegistroCivil\REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_RegistroCivil\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_RegistroCivil\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_RegistroCivil\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_CRM_Obtener_Datos_Persona\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\ValidarDocumento.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Consulta_Serie_Cedula_Identidad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_WorkFlowGestor\WorkFlowGestor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_WorkFlowGestor\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_WorkFlowGestor\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_WorkFlowGestor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Minvu_CajaLosAndes_orcCajaLosAndesBloqueo_prt_CajaLosAndes_Bloqueo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_AhorroCajaLosAndes_Bloqueo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Minvu_Coopeuch_orc_minvu_coopeuch_bloqueo_prt_coopeuch_bloqueo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_COOPEUCH_Bloqueo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\BDD_orc_bloqueo_Prt_bdd_bloqueo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_SCOTIABANK_Bloqueo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\BCOESTADO_orc_bloqueo_prt_bcoestado_bloqueo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Ahorro_ESTADO_Bloqueo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Minvu.SectoresMedios.Helper\Minvu.SectoresMedios.Helper.csproj">
+      <Project>{21c62179-7a5e-4b00-9e36-e4a1c06766e5}</Project>
+      <Name>Minvu.SectoresMedios.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Propiedad_Habitacional\SII_orc_propiedades_habitacionales_prt_sii_prop_habitacionalesComuna.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Propiedad_Habitacional\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Propiedad_Habitacional\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Propiedad_Habitacional\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSII_Rol\SII_orc_inf_rol_prt_Datos_Rol.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSII_Rol\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSII_Rol\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSSII_Rol\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegistroTecnico\RTECService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegistroTecnico\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegistroTecnico\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegistroTecnico\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSICEMideplan_FPS\fps.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSICEMideplan_FPS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSICEMideplan_FPS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSICEMideplan_FPS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ORM\RukanMigraEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RukanMigraEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ORM\WorkflowMigraEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WorkflowMigraEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Contratista\Contratista.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Contratista\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Contratista\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ICE_Contratista\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSSIM_DatosFuncionario\funcionario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSSIM_DatosFuncionario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSSIM_DatosFuncionario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSSIM_DatosFuncionario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

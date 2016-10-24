@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rukan_migraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LOG_ERROR_SITIO">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="XML_ERR" Type="varchar" MaxLength="4000" />
+    <Property Name="FECHA" Type="datetime" />
+  </EntityType>
+  <Function Name="Mensaje_SeleccionarPorCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Cambiar_Estado_Inscripcion_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idobjeto" Type="int" Mode="In" />
+    <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+    <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Cambiar_Estado_Interesado_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idobjeto" Type="int" Mode="In" />
+    <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+    <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Cambiar_Estado_Postulacion_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idobjeto" Type="int" Mode="In" />
+    <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+    <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Cambiar_Estado_Subsidio_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idobjeto" Type="int" Mode="In" />
+    <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+    <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Cambiar_Estado_Vivienda_i_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idobjeto" Type="int" Mode="In" />
+    <Parameter Name="codigoestado" Type="varchar" Mode="In" />
+    <Parameter Name="descripcionestado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pa_Comuna_i_s" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_comuna" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_PROVINCIA_SELECCIONARPORCOMUNA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="comuna" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_usp_con_Comuna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_region" Type="int" Mode="In" />
+    <Parameter Name="id_provincia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_USP_CON_COMUNA_PROVINCIA_REGION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COMUNA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_usp_con_COMUNASII_X_IDCOMUNA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COM_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_usp_con_DOMINIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOM_ID_DOM" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_USP_CON_REGION_SELECCION_TODOS_DS01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_CONDICION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LIN_PRO" Type="int" Mode="In" />
+    <Parameter Name="LLA_ID" Type="int" Mode="In" />
+    <Parameter Name="OFE_ID" Type="int" Mode="In" />
+    <Parameter Name="DCB_APL_TIP" Type="int" Mode="In" />
+    <Parameter Name="DCB_CBR_TIP" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RUKAN_MIGRA_USP_PRC_SELECCIONAR_PARAMETROS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="rukan_migraModelStoreContainer">
+    <EntitySet Name="LOG_ERROR_SITIO" EntityType="Self.LOG_ERROR_SITIO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

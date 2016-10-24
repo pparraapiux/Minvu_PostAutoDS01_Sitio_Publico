@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Minvu.Crm.Wcf" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ObtenerCiudadano" targetNamespace="http://Minvu.Crm.Wcf" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Minvu.Crm.Wcf/Imports">
+      <xsd:import schemaLocation="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?xsd=xsd0" namespace="http://Minvu.Crm.Wcf" />
+      <xsd:import schemaLocation="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IObtenerCiudadano_ObtenerCiudadanoCrm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCiudadanoCrm" />
+  </wsdl:message>
+  <wsdl:message name="IObtenerCiudadano_ObtenerCiudadanoCrm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCiudadanoCrmResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IObtenerCiudadano">
+    <wsdl:operation name="ObtenerCiudadanoCrm">
+      <wsdl:input wsaw:Action="http://Minvu.Crm.Wcf/IObtenerCiudadano/ObtenerCiudadanoCrm" message="tns:IObtenerCiudadano_ObtenerCiudadanoCrm_InputMessage" />
+      <wsdl:output wsaw:Action="http://Minvu.Crm.Wcf/IObtenerCiudadano/ObtenerCiudadanoCrmResponse" message="tns:IObtenerCiudadano_ObtenerCiudadanoCrm_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IObtenerCiudadano" type="tns:IObtenerCiudadano">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerCiudadanoCrm">
+      <soap:operation soapAction="http://Minvu.Crm.Wcf/IObtenerCiudadano/ObtenerCiudadanoCrm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ObtenerCiudadano">
+    <wsdl:port name="BasicHttpBinding_IObtenerCiudadano" binding="tns:BasicHttpBinding_IObtenerCiudadano">
+      <soap:address location="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

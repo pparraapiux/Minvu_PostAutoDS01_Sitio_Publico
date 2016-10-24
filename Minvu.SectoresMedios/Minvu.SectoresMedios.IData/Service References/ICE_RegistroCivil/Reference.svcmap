@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="303f9e62-ad09-492c-8b67-e18067fbdd97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsminvune.minvu.cl/Minvu.RegistroCivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.wsdl" MetadataType="Wsdl" ID="5727ccf2-769c-4adb-b3ce-4b9d51dcd658" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.RegistroCivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.asmx?wsdl" />
+    <MetadataFile FileName="REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.disco" MetadataType="Disco" ID="7f51f418-97fc-4d99-8570-b79b7810a80d" SourceId="1" SourceUrl="http://wsminvune.minvu.cl/Minvu.RegistroCivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

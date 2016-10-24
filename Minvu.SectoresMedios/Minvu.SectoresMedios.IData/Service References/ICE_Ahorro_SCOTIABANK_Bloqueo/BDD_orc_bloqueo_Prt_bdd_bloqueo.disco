@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx?wsdl" docRef="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx" xmlns:q1="http://minvu.cl/ICE/Bdd" binding="q1:BDD_orc_bloqueo_Prt_bdd_bloqueoSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://wsminvune.minvu.cl/Minvu.Bdd/BDD_orc_bloqueo_Prt_bdd_bloqueo.asmx" xmlns:q2="http://minvu.cl/ICE/Bdd" binding="q2:BDD_orc_bloqueo_Prt_bdd_bloqueoSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

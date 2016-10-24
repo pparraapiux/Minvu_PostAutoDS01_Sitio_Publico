@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://Minvu.Crm.Wcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsminvuni.minvu.cl/WSICECRM/ObtenerCiudadano.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="ObtenerCiudadanoCrm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://Minvu.Crm.Wcf" minOccurs="0" name="rut" nillable="true" type="q1:RutType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RutType">
+    <xs:sequence>
+      <xs:element name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="DV" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q2="http://Minvu.Crm.Wcf" name="RutType" nillable="true" type="q2:RutType" />
+  <xs:element name="ObtenerCiudadanoCrmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://Minvu.Crm.Wcf" minOccurs="0" name="ObtenerCiudadanoCrmResult" nillable="true" type="q3:SalidaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SalidaType">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://Minvu.Crm.Wcf" minOccurs="0" name="Estado" nillable="true" type="q4:EstadoType" />
+      <xs:element xmlns:q5="http://Minvu.Crm.Wcf" minOccurs="0" name="Respuesta" nillable="true" type="q5:RespuestaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q6="http://Minvu.Crm.Wcf" name="SalidaType" nillable="true" type="q6:SalidaType" />
+  <xs:complexType name="EstadoType">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q7="http://Minvu.Crm.Wcf" name="EstadoType" nillable="true" type="q7:EstadoType" />
+  <xs:complexType name="RespuestaType">
+    <xs:sequence>
+      <xs:element name="Encontrado" type="xs:boolean" />
+      <xs:element xmlns:q8="http://Minvu.Crm.Wcf" minOccurs="0" name="Ciudadano" nillable="true" type="q8:CiudadanoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q9="http://Minvu.Crm.Wcf" name="RespuestaType" nillable="true" type="q9:RespuestaType" />
+  <xs:complexType name="CiudadanoType">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://Minvu.Crm.Wcf" name="Rut" nillable="true" type="q10:RutType" />
+      <xs:element name="Nombres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://Minvu.Crm.Wcf" minOccurs="0" name="Direccion" nillable="true" type="q11:DireccionType" />
+      <xs:element xmlns:q12="http://Minvu.Crm.Wcf" minOccurs="0" name="Contacto" nillable="true" type="q12:ContactoType" />
+      <xs:element minOccurs="0" name="GuidCiudadano" type="ser:guid" />
+      <xs:element minOccurs="0" name="EstadoCivil" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Fechanacimiento" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q13="http://Minvu.Crm.Wcf" name="CiudadanoType" nillable="true" type="q13:CiudadanoType" />
+  <xs:complexType name="DireccionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Block" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Poblacion" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://Minvu.Crm.Wcf" minOccurs="0" name="Region" nillable="true" type="q14:RegionType" />
+      <xs:element xmlns:q15="http://Minvu.Crm.Wcf" minOccurs="0" name="Provincia" nillable="true" type="q15:ProvinciaType" />
+      <xs:element xmlns:q16="http://Minvu.Crm.Wcf" minOccurs="0" name="Comuna" nillable="true" type="q16:ComunaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q17="http://Minvu.Crm.Wcf" name="DireccionType" nillable="true" type="q17:DireccionType" />
+  <xs:complexType name="RegionType">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="GuidCrm" type="ser:guid" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q18="http://Minvu.Crm.Wcf" name="RegionType" nillable="true" type="q18:RegionType" />
+  <xs:complexType name="ProvinciaType">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="GuidCrm" type="ser:guid" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q19="http://Minvu.Crm.Wcf" name="ProvinciaType" nillable="true" type="q19:ProvinciaType" />
+  <xs:complexType name="ComunaType">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="GuidCrm" type="ser:guid" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q20="http://Minvu.Crm.Wcf" name="ComunaType" nillable="true" type="q20:ComunaType" />
+  <xs:complexType name="ContactoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoParticular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoMovil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoTrabajo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtroTelefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q21="http://Minvu.Crm.Wcf" name="ContactoType" nillable="true" type="q21:ContactoType" />
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="540d868d6094415fb99c3f1ccaed6140" Name="Diagram1" >
+        <EntityTypeShape EntityType="Workflow_MigraModel.estado_evento" Width="2.25" PointX="6.375" PointY="0.875" />
+        <EntityTypeShape EntityType="Workflow_MigraModel.evento" Width="2.125" PointX="3.75" PointY="0.875" />
+        <EntityTypeShape EntityType="Workflow_MigraModel.instancia_objeto_workflow" Width="2.125" PointX="0.625" PointY="1.375" />
+        <AssociationConnector Association="Workflow_MigraModel.FK_evento_instancia_objeto_workflow" />
+        <AssociationConnector Association="Workflow_MigraModel.FK_instancia_objeto_workflow_instancia_objeto_workflow" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

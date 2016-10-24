@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://minvu/ice/regcivil" xmlns:s1="http://info_persona.Schema_info_persona_conice" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://info_persona.Schema_info_persona_Rice" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://minvu/ice/regcivil" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BizTalk assembly "Minvu.RegistroCivil.Process, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e8db279743d1da57" published web service.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://minvu/ice/regcivil">
+      <s:import namespace="http://info_persona.Schema_info_persona_conice" />
+      <s:import namespace="http://info_persona.Schema_info_persona_Rice" />
+      <s:element name="ope_prt_regcivil_info_persona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:Infopersona" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ope_prt_regcivil_info_personaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:ICE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://info_persona.Schema_info_persona_conice">
+      <s:element name="Infopersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Rut" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="Dv" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Periodo" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="Ussist" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://info_persona.Schema_info_persona_Rice">
+      <s:element name="ICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="RESULTADO">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="ESTADO" type="s:int" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="CODIGO" type="s:integer" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="DESCRIPCION" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ID_RESPUESTA" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="minvuRutData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="persona">
+                    <s:complexType mixed="true">
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="rut" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombres" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apPaterno" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apMaterno" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaNaci" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaDefun" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="estadoCivil" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sexo" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="discapacidad">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaVenc" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="mental" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sensorial" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fisica" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="discapacidadRN" nillable="true">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="indPermanente" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="fechaProximoDictamen" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="gradoDiscapacidadGlobal" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causaPrincipal" nillable="true" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="listaCausaSecundaria" nillable="true">
+                                <s:complexType>
+                                  <s:sequence>
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causa" nillable="true" type="s:string" />
+                                  </s:sequence>
+                                </s:complexType>
+                              </s:element>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nacionalidad" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="paisOrigen" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="matrimonio">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="conyuge">
+                          <s:complexType mixed="true">
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="error" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="rut" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombres" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apPaterno" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apMaterno" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaNaci" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaDefun" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="estadoCivil" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sexo" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="discapacidad">
+                                <s:complexType>
+                                  <s:sequence>
+                                    <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaVenc" type="s:string" />
+                                    <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="mental" type="s:string" />
+                                    <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sensorial" type="s:string" />
+                                    <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fisica" type="s:string" />
+                                  </s:sequence>
+                                </s:complexType>
+                              </s:element>
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="discapacidadRN" nillable="true">
+                                <s:complexType>
+                                  <s:sequence>
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="indPermanente" nillable="true" type="s:string" />
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="fechaProximoDictamen" nillable="true" type="s:string" />
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="gradoDiscapacidadGlobal" nillable="true" type="s:string" />
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causaPrincipal" nillable="true" type="s:string" />
+                                    <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="listaCausaSecundaria" nillable="true">
+                                      <s:complexType>
+                                        <s:sequence>
+                                          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causa" nillable="true" type="s:string" />
+                                        </s:sequence>
+                                      </s:complexType>
+                                    </s:element>
+                                  </s:sequence>
+                                </s:complexType>
+                              </s:element>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="capitulacion" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaInscripcionMatrimonio" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="hijo">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="rut" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombres" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apPaterno" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apMaterno" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaNaci" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaDefun" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="estadoCivil" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sexo" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="discapacidad">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaVenc" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="mental" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sensorial" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fisica" type="s:string" />
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                        <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="discapacidadRN" nillable="true">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="indPermanente" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="fechaProximoDictamen" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="gradoDiscapacidadGlobal" nillable="true" type="s:string" />
+                              <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causaPrincipal" nillable="true" type="s:string" />
+                              <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="listaCausaSecundaria" nillable="true">
+                                <s:complexType>
+                                  <s:sequence>
+                                    <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="causa" nillable="true" type="s:string" />
+                                  </s:sequence>
+                                </s:complexType>
+                              </s:element>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ope_prt_regcivil_info_personaSoapIn">
+    <wsdl:part name="parameters" element="tns:ope_prt_regcivil_info_persona" />
+  </wsdl:message>
+  <wsdl:message name="ope_prt_regcivil_info_personaSoapOut">
+    <wsdl:part name="parameters" element="tns:ope_prt_regcivil_info_personaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap">
+    <wsdl:operation name="ope_prt_regcivil_info_persona">
+      <wsdl:input message="tns:ope_prt_regcivil_info_personaSoapIn" />
+      <wsdl:output message="tns:ope_prt_regcivil_info_personaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap" type="tns:REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ope_prt_regcivil_info_persona">
+      <soap:operation soapAction="http://minvu/ice/regcivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona/ope_prt_regcivil_info_persona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap12" type="tns:REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ope_prt_regcivil_info_persona">
+      <soap12:operation soapAction="http://minvu/ice/regcivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona/ope_prt_regcivil_info_persona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="REGCIVIL_orc_datos_persona_prt_regcivil_info_persona">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BizTalk assembly "Minvu.RegistroCivil.Process, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e8db279743d1da57" published web service.</wsdl:documentation>
+    <wsdl:port name="REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap" binding="tns:REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap">
+      <soap:address location="http://wsminvune.minvu.cl/Minvu.RegistroCivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.asmx" />
+    </wsdl:port>
+    <wsdl:port name="REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap12" binding="tns:REGCIVIL_orc_datos_persona_prt_regcivil_info_personaSoap12">
+      <soap12:address location="http://wsminvune.minvu.cl/Minvu.RegistroCivil/REGCIVIL_orc_datos_persona_prt_regcivil_info_persona.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

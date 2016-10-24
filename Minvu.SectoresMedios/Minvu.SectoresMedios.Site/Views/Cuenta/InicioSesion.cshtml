@@ -1,0 +1,22 @@
+﻿@model Minvu.SectoresMedios.Site.Models.Cuenta
+
+@{
+    ViewBag.Title = "InicioSesion";
+}
+
+@using (Html.BeginForm("Login", "Cuenta", FormMethod.Post))
+{
+    <div class="col-xs-7">
+        <table class="col-xs-12">
+            <tr>
+                <td class="col-xs-5">RUT (XX.XXX.XXX-X)</td>
+                <td class="col-xs-7">@Html.TextBoxFor(m => m.Id)</td>
+            </tr>
+            <tr>
+                <td class="col-xs-5">Nro Serie</td>
+                <td class="col-xs-7">@Html.TextBoxFor(m => m.NroSerie)</td>
+            </tr>
+        </table>
+        <input type="submit" value="Conectarse">
+    </div>
+}

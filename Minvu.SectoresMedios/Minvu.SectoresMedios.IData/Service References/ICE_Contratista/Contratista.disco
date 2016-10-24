@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx?wsdl" docRef="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx" xmlns:q1="http://minvu.WSICE.Contratistas/" binding="q1:ContratistaSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://wsminvuni.test.minvu.cl/WSICEContratistas/Contratista.asmx" xmlns:q2="http://minvu.WSICE.Contratistas/" binding="q2:ContratistaSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
